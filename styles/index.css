@@ -1,0 +1,81 @@
+a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #1890ff;
+  outline: 0;
+  padding: 4px 16px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table tr:hover {
+  background: #f3f3f3;
+}
+table th,
+table td {
+  padding: 10px 16px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+table th {
+  border-top: 1px solid #666;
+}
+table td {
+  color: #333;
+}
+
+.mt-sm {
+  margin-top: 24px;
+}
+
+.mt {
+  margin-top: 32px;
+}
+.ml {
+  margin-left: 16px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120px;
+}
+
+.input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 24px;
+  letter-spacing: 1px;
+  width: 300px;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+}
+
+.button {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  min-width: 110px;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.button:hover {
+  color: #333;
+}
+
+.table-container {
+  width: 800px;
+  margin-top: 50px;
+}

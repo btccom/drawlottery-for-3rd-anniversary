@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BTC.com Pool 3rd anniversary celebration</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+    <script src="./js/randomGenerator.js"></script>
+    <script src="./data/lotteryList.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>BTC.com Pool 3rd anniversary celebration</h1>
+      <div class="mt">
+        <input
+          type="text"
+          class="input"
+          id="inputSeed"
+          placeholder="请输入抽奖因子"
+        />
+        <button class="button ml" onClick="drawLottery()">抽 奖</button>
+      </div>
+      <div class="mt-sm">
+        <a href="./lottery-list.html" target="_blank">查看所有兑换记录</a>
+      </div>
+      <div class="table-container">
+        <h2>中奖列表</h2>
+        <table>
+          <thead>
+            <th>序号</th>
+            <th>奖券ID</th>
+            <th>兑换时间</th>
+          </thead>
+          <tbody id="tbodyLucky"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      function drawLottery() {
+        var seed = document.querySelector("#inputSeed").value;
+        if (!seed) {
+          alert("请输入抽奖因子");
+          return;
+        }
+
+        var luckyList = [];
+        var lotteryList = allLotteryList.list;
+        if (lotteryList.length < size) {
+          luckyList = lotteryList;
+        } else {
+          var lowest = lotteryList[0].id;
+          var highest = lotteryList[lotteryList.length - 1].id;
+          var size = 10;
+          var luckyIDs = randomGenerator(seed, size, lowest, highest);
+          luckyList = lotteryList.filter(
+            item => luckyIDs.indexOf(item.id) > -1
+          );
+        }
+        var tableTrDoms = luckyList.map(
+          (item, index) =>
+            "<tr><td>" +
+            (index + 1) +
+            "</td><td>" +
+            item.id +
+            "</td><td>" +
+            item.lottery_num +
+            "</td></tr>"
+        );
+
+        document.querySelector("#tbodyLucky").innerHTML = tableTrDoms.join("");
+      }
+    </script>
+  </body>
+</html>
