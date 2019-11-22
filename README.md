@@ -6,6 +6,8 @@ lottery program for BTC.com Pool 3rd anniversary celebration
 
 ## Usage
 ### Step1
-Input draw seed.
+open index.html in browser
 ### Step2
+Input draw seed.
+### Step3
 Click "抽 奖"
