@@ -49,6 +49,7 @@
           return;
         }
 
+        var size = 1000;
         var luckyList = [];
         var lotteryList = allLotteryList.list;
         if (lotteryList.length < size) {
@@ -56,7 +57,7 @@
         } else {
           var lowest = lotteryList[0].id;
           var highest = lotteryList[lotteryList.length - 1].id;
-          var size = 10;
+
           var luckyIDs = randomGenerator(seed, size, lowest, highest);
           luckyList = lotteryList.filter(
             item => luckyIDs.indexOf(item.id) > -1
