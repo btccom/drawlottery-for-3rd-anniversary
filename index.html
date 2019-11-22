@@ -12,26 +12,29 @@
   </head>
   <body>
     <div class="container">
-      <h1>BTC.com Pool 3rd anniversary celebration</h1>
+      <h1>
+        BTC.com Pool 3rd anniversary celebration
+      </h1>
       <div class="mt">
         <input
           type="text"
           class="input"
           id="inputSeed"
-          placeholder="请输入抽奖因子"
+          placeholder="请输入抽奖因子 input seed "
         />
-        <button class="button ml" onClick="drawLottery()">抽 奖</button>
+        <button class="button ml" onClick="drawLottery()">抽奖 Draw</button>
       </div>
       <div class="mt-sm">
         <a href="./lottery-list.html" target="_blank">查看所有兑换记录</a>
       </div>
       <div class="table-container">
-        <h2>中奖列表</h2>
+        <h2>中奖列表 Lucky List</h2>
         <table>
           <thead>
-            <th>序号</th>
-            <th>奖券序号</th>
-            <th>奖券ID</th>
+            <th>序号<br />No.</th>
+            <th>抽奖ID<br />Drawing ID</th>
+            <th>奖券ID<br />Ticket ID</th>
+            <th>兑换时间<br />Redeeming Time</th>
           </thead>
           <tbody id="tbodyLucky"></tbody>
         </table>
@@ -67,6 +70,8 @@
             item.id +
             "</td><td>" +
             item.lottery_num +
+            "</td><td>" +
+            item.date +
             "</td></tr>"
         );
 
