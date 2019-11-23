@@ -49,10 +49,13 @@
           return;
         }
 
-        var size = 1000;
+        var size = 10;
         var luckyList = [];
-        var lotteryList = allLotteryList.list;
-        if (lotteryList.length < size) {
+        var lotteryList = allLotteryList.list || [];
+        if (lotteryList.length === 0) {
+          alert("请先上传兑奖列表");
+          return;
+        } else if (lotteryList.length < size) {
           luckyList = lotteryList;
         } else {
           var lowest = lotteryList[0].id;
